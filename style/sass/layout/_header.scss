@@ -1,0 +1,84 @@
+@use '../abstracts/index' as *;
+header {
+    position: sticky;
+    top: 0;
+    min-height: 67px;
+    background-color: var(--color-primary-brand);
+    color: var(--color-white);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    z-index: 10;
+
+    svg {
+        display: inline-block;
+        fill: var(--color-white);
+    }
+
+    .logo__img {
+        filter: invert(1);
+    }
+
+    nav {
+        ul {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+
+            li {
+                padding: 10px;
+                .basket-badge {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .hamburger-menu {
+        cursor: pointer;
+        display: none;
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--color-white);
+            margin: 5px 0;
+        }
+
+    }
+
+    @include mq(tab) {
+        .hamburger-menu {
+            display: inline-block;
+        }
+
+        nav {
+            background-color: var(--color-white);
+            color: var(--color-black);
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 66px;
+            left: 0;
+            height: 100vw;
+            width: map-get($breakpoints, mob);
+
+            ul {
+                flex-direction: column;
+                align-items: flex-end;
+            }
+
+            li {
+                width: 100%;
+                padding-left: 10%;
+            }
+
+            a {
+                padding: 10px;
+                display: block;
+            }
+        }
+    }
+}
+

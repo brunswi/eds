@@ -1,0 +1,49 @@
+@use "../abstracts/index" as *;
+#products {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.product-teaser {
+    max-width: 350px;
+    margin-top: 1rem;
+
+    button {
+        margin-left: 1rem;
+    }
+
+    img {
+        width: 350px;
+        height: auto;
+        object-fit: contain;
+        aspect-ratio: 1/1;
+    }
+}
+
+.product-teaser > a > h3 {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.product-teaser > .price {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.product-teaser > button > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.2rem
+}
+
+.product-teaser > button > div > svg {
+    display: inline-block;
+}
+
+[data-theme="light"] .product-teaser > button > div > svg {
+    fill: whitesmoke;
+}

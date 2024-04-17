@@ -1,0 +1,77 @@
+@use "../abstracts/index" as *;
+
+#clear-basket {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#basket-product-list {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 95vw;
+    table-layout: fixed;
+    margin: 20px 0;
+    color: black;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr {
+    background-color: #fff;
+}
+
+tr > td > span > img {
+    display: inline-block;
+    margin-right: 1rem;
+    max-width: 25px;
+    aspect-ratio: 1/1;
+    border-radius: 2px;
+}
+
+
+tr > th:nth-child(2) {
+    width: 10%;
+    text-align: center;
+
+    @media (width > 900px) {
+        width: 5%;
+    }
+}
+
+tr > th:last-child {
+    width: 20%;
+    text-align: center;
+
+    @media (width > 900px) {
+        width: 10%;
+    }
+}
+
+tr > td:nth-child(2),
+tr > td:last-child {
+    text-align: center;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #ccc;
+}

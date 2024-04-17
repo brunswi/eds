@@ -1,0 +1,60 @@
+@use '../abstracts/index' as *;
+
+main {
+    z-index: 1;
+    position: relative;
+    min-height: 100vh;
+
+    .content {
+        min-height: 600px;
+        max-width: 1200px;
+        margin: 3em auto;
+        padding: 0 2rem;
+    }
+
+    .center {
+        display: flex;
+        align-content: space-around;
+        justify-content: space-around;
+
+        .center__img {
+            @include mq(dt-s) {
+                width: 35em;
+            }
+            @include mq(tab) {
+                width: 25em;
+            }
+            @include mq(mob) {
+                width: 15em;
+            }
+        }
+    }
+
+    section {
+        margin-bottom: 4rem;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+
+    h1 {
+        margin: 1rem 0;
+        font-size: 32px;
+
+        @media (width >= 900px) {
+            font-size: 48px;
+        }
+    }
+
+
+    p {
+        padding: 0.5rem 0.5rem 0.5rem 0;
+    }
+
+    p:dir(rtl) {
+        padding: 0.5rem 0.5rem 0 0.5rem;
+    }
+
+}
+
