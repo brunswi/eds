@@ -16,7 +16,7 @@
 
     .product__text-panel {
         width: 50%;
-        margin: 15px;
+        margin-bottom: 30px;
         display: flex;
         flex-direction: column;
 
@@ -25,10 +25,11 @@
         }
 
         @include mq(tab) {
-            * {
-                margin: 0 15px 10px 15px;
-            }
+            width: 100%;
             align-items: center;
+            * {
+                margin-top: 15px;
+            }
         }
     }
 }

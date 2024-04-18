@@ -14,7 +14,6 @@
         }
         .teaser-text-panel {
             width: 50%;
-            min-width: 380px;
             margin-top: 30px;
             display: flex;
             flex-direction: column;
@@ -71,8 +70,8 @@
             align-items: center;
             align-self: center;
             img {
-                width: 600px;
-                object-position: bottom center;
+                width: 100%;
+                object-position: bottom left;
             }
             .teaser-text-panel {
                 width: 90%;
