@@ -53,12 +53,9 @@
         }
         img {
             border-radius: 0;
-            object-position: top left;
+            object-position: top -200px left 40%;
             object-fit: cover;
-            margin-bottom: -20px;
-            @include mq(dt-s)  {
-                transform: scale(1.6);
-            }
+            margin-bottom: -220px;
             @include mq(tab)  {
                 transform: none;
                 mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50% , transparent 100%);

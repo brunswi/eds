@@ -15,9 +15,6 @@
 
     a {
         z-index: 2;
-        @include mq(tab) {
-            max-width: 40%;
-        }
     }
 
     .teaser-row-item {
