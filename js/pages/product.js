@@ -28,6 +28,7 @@ async function createProduct(main) {
     const products = await loadData(url);
     /** @type {Product | undefined} */
     const product = products.find((product) => product.id === productId);
+    console.debug(JSON.stringify(product, null, 2));
     document.title = capitalize(shortenText(product?.title, 25));
 
     const productImg = main.querySelector("#product-image");
@@ -42,6 +43,15 @@ async function createProduct(main) {
     const productPrize = main.querySelector("#product-price");
     productPrize.innerHTML = product.price.toFixed(2) + " €";
 
+    const productRating = main.querySelector("#product-rating");
+    const productRatingRate = product.rating.rate || 0
+    const productRatingCount = product.rating.count || 0
+    productRating.setAttribute("data-rating-rate", productRatingRate);
+    productRating.setAttribute("data-rating-count", productRatingCount);
+    productRating.setAttribute("style", `--rating: ${productRatingRate};`);
+    productRating.setAttribute("aria-label", `This product was rated by ${productRatingCount} customers. The overall rating is ${productRatingRate} out of 5.`);
+    productRating.innerHTML = `(${productRatingCount})`;
+
     const productDescriptionShort = main.querySelector("#product-description-short");
     productDescriptionShort.innerHTML = product.description.substring(0, product.description.indexOf('.') + 1);
 
@@ -51,10 +61,6 @@ async function createProduct(main) {
     const button = main.querySelector("#product-add-to-cart");
     button.setAttribute("product-id", product.id);
     button.addEventListener('click', () => addToBasket(product.id));
-
-    console.debug(JSON.stringify(product, null, 2));
-
-
 }
 
 createProduct(document.getElementById("product-main")).then(() => {

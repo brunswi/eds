@@ -1,0 +1,16 @@
+.star-rating {
+  $percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font: var(--star-size) Times;
+  line-height: 1;
+
+  &::before {
+    content: '★★★★★';
+    letter-spacing: 3px;
+    background: linear-gradient(90deg, var(--color-black) $percent, var(--color-white) $percent);
+    -webkit-text-stroke: 1px var(--color-black);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
