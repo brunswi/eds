@@ -1,5 +1,5 @@
 function createFooter(footer) {
-    footer.innerHTML = `
+  footer.innerHTML = `
     <div class="footer">
         <div class="footer__top">
             <section>
@@ -53,5 +53,5 @@ function createFooter(footer) {
 }
 
 export {
-    createFooter
-}
+  createFooter,
+};

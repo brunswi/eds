@@ -9,18 +9,25 @@
     "license": "MIT",
     "author": "Florian Brunswicker",
     "scripts": {
+        "lint": "esw .",
         "serve": "live-server",
         "sass-dev": "sass --watch --update --style=expanded style/sass:style/css",
         "prod": "sass --no-source-map --style=compressed style/sass:style/css",
-        "dev": "concurrently  \" npm run sass-dev \" \" npm run serve \" "
+        "dev": "concurrently  \" npm run sass-dev \" \" npm run serve \" \"npm run lint -- --watch\""
     },
     "devDependencies": {
-        "concurrently": "^8.2.2",
-        "live-server": "^1.1.0",
-        "sass": "^1.74.1"
+        "@babel/core": "7.24.4",
+        "@babel/eslint-parser": "7.24.1",
+        "concurrently": "8.2.2",
+        "eslint": "8.57.0",
+        "eslint-config-airbnb-base": "15.0.0",
+        "eslint-plugin-import": "2.29.1",
+        "eslint-watch": "8.0.0",
+        "live-server": "1.2.2",
+        "sass": "1.75.0"
     },
     "dependencies": {
-        "koa": "^2.15.0",
+        "koa": "^2.15.3",
         "koa-router": "^12.0.1",
         "koa-static": "^5.0.0"
     }

@@ -1,11 +1,11 @@
-import {updateBadge} from "../basket.js";
+import { updateBadge } from '../basket.js';
 
 /**
  * Loads a block named 'header' into header
  * @param {Element} header header element
  */
 async function createHeader(header) {
-    header.innerHTML = `
+  header.innerHTML = `
 <div class="hamburger-menu">
   <div class="bar"></div>
   <div class="bar"></div>
@@ -30,15 +30,15 @@ async function createHeader(header) {
 
   `;
 
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const nav = document.querySelector('nav');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const nav = document.querySelector('nav');
 
-    hamburgerMenu.addEventListener('click', function () {
-        nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
-    });
-    updateBadge();
+  hamburgerMenu.addEventListener('click', () => {
+    nav.style.display = nav.style.display === 'block' ? 'none' : 'block';
+  });
+  updateBadge();
 }
 
 export {
-    createHeader
-}
+  createHeader,
+};
