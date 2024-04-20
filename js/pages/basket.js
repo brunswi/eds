@@ -31,17 +31,18 @@ async function createBasket(main) {
             const productListItem = document.createElement('tr');
             const matchedProduct = getProductById(product.id, products);
             const itemSum = matchedProduct.price * product.count;
+            console.log(itemSum);
             basketSum += itemSum;
             productListItem.innerHTML = `
                 <td><span><img loading="lazy" src=${matchedProduct.image} alt=${matchedProduct.title}></span><strong>${shortenText(matchedProduct.title, 55)}</strong></td>
                 <td>${product.count}</td>
-                <td>$${itemSum}</td>
+                <td>${itemSum.toFixed(2)} €</td>
             `
             console.debug(JSON.stringify(matchedProduct, null, 2));
             basketProductList.appendChild(productListItem);
         })
 
-        basketSumElement.innerText = "$" + Math.round(basketSum * 100) / 100
+        basketSumElement.innerText = `${basketSum.toFixed(2)}  €`
     }
 
     function resetBasketTable(basketProductList) {
